@@ -24,7 +24,6 @@
   margin: 50;
   line-height: 0.9; /* Ajusta el espacio entre las líneas si es necesario */
 }
-
 .sello {
   font-size: 1.4em; /* Ajusta el tamaño de la fuente si es necesario */
   text-align: right;
@@ -32,13 +31,15 @@
   line-height: 0.9; /* Ajusta el espacio entre las líneas si es necesario */
   font-weight: 100; 
 }
-.sello h2{
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 400; /* 400 es el peso para "Regular" */
+
+.sello img {
+  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
 }
 
 .header-nav {
-  margin-top: 100px; /* Añade espacio entre el h1 y la navegación */
+  margin-top: 60px; /* Añade espacio entre el h1 y la navegación */
   padding: 50 550px; /* Padding de 650px a los lados */
   box-sizing: border-box; /* Incluye padding en el ancho total */
   width: 100%; /* Asegura que el contenedor ocupe el ancho completo */
@@ -56,42 +57,46 @@
 }
 
 .header-nav ul li {
-  display: inine;
+  display: inline;
 }
 
 .header-nav ul li a {
   text-decoration: none;
-
   font-size: 1em; /* Ajusta el tamaño de la fuente si es necesario */
 }
 
 .header-nav ul li a:hover {
   text-decoration: underline;
 }
+
 .works {
   padding: 40; /* Ajusta o elimina el padding si está causando problemas */
   display: flex;
   justify-content: center; /* Centra el contenedor de la cuadrícula horizontalmente */
+} .videos {
+  padding: 20px;
 }
-body {
-  overflow-x: hidden; /* Evita el desplazamiento horizontal */
-}
+
 .media-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 10px;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding-left: 70px;
+  margin: 30;
   max-width: 1200px; /* Ajusta esto según el ancho máximo deseado */
   width: 100%;
+}
+.media-grid img {
+  width: 100%;
+  height: auto;
+  max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
 }
 
 .media-item {
   position: relative;
   overflow: hidden;
 }
-
 .media-item img {
   width: 100%;
   height: 100%;
@@ -99,85 +104,56 @@ body {
   display: flex;
 }
 
-.media-item h3, .media-item p {
-  display: none;
-}
 .contacto {
   max-width: 800px; /* Ajusta el ancho máximo según sea necesario */
   margin: 0 auto; /* Centra el contenedor horizontalmente */
   padding: 20px; /* Añade padding para espaciar el contenido interno */
-  box-sizing: border-box; /* Incluye padding y border en el ancho total */
   text-align: center; /* Centra el texto dentro del contenedor */
-
 }
+
 .mail {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-weight: 700;
-  font-size: 3.5em;
+  font-size: 3.5em; /* Ajusta el tamaño de la fuente si es necesario */
   text-align: center;
   margin-top: 30px;
 }
-.videos {
-  padding: 20px;
 
-}
-
-.media-gridv {
+.videos .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta el tamaño mínimo y máximo de las columnas */
-  gap: 10px; /* Espacio entre los elementos de la cuadrícula */
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
   list-style: none;
-  padding: 0;
-  margin: 0;
-  max-width: 1200px; /* Ancho máximo para el contenedor de videos */
-  width: 100%;
-  box-sizing: border-box;
 }
 
-/* Estilo para los elementos de video */
 .media-itemv {
   position: relative;
   overflow: hidden;
-
 }
 
 .media-itemv iframe {
   width: 100%;
   height: 100%;
   border: none;
-  display: block;
+  object-fit: cover; /* Ajusta el tamaño del video al contenedor */
+}
+.media-item img {
+  width: 100%; /* Asegura que la imagen ocupe el ancho completo del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  object-fit: cover; /* Cubre el contenedor sin distorsionar la imagen */
+}
+
+.media-itemv iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
   object-fit: cover; /* Ajusta la imagen del video al contenedor */
 }
 
 @media only screen and (max-width: 768px) {
-  .media-item {
-    /* Ajusta el tamaño de las miniaturas para pantallas pequeñas */
-    width: 100%;
-    /* Otros ajustes específicos para pantallas pequeñas */
-}
-
-.thumbnail {
-    /* Ajusta el tamaño de la imagen en miniatura para pantallas pequeñas */
-    width: 100%;
-    height: auto;
-}
-
-.overlay {
-    /* Asegúrate de que el overlay ocupe toda la pantalla */
-    width: 100vw;
-    height: 100vh;
-}
-
-.enlarged-img {
-    /* Ajusta el tamaño máximo de la imagen ampliada para pantallas pequeñas */
-    max-width: 95%;
-    max-height: 95%;
-}
-  .header {
-    padding: 10px;
+  .header-nav ul {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    gap: 10px;
   }
 
   .header-title {
@@ -185,35 +161,7 @@ body {
   }
 
   .sello {
-    display: flex;
-    justify-content: center; /* Centra la imagen horizontalmente */
-    align-items: center; /* Centra la imagen verticalmente */
-    margin: 0; /* Elimina el margen para ajustar el espacio */
-    padding: 0; /* Elimina el padding para evitar espacio adicional */
-}
-
-.sello img {
-    display: block; /* Elimina el espacio en línea debajo de la imagen */
-    max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
-    height: auto; /* Mantiene las proporciones de la imagen */
-    object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
-}
-  .header-nav ul {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .header-nav ul li {
-    margin-bottom: 10px;
-  }
-
-  .header-nav ul li a {
-    font-size: 1em;
-  }
-
-  .works, .street {
-    padding: 10px;
+    text-align: center;
   }
 
   .media-grid {
@@ -221,56 +169,30 @@ body {
     gap: 10px;
   }
 
-  .media-item img {
-    width: 100%;
-    height: auto;
-    
-  }
-
-  .media-item h3, .media-item p {
-    text-align: center;
-    font-size: 0.9em;
-  }
-
-  .contacto {
-    padding: 20px;
+  .contacto, .mail {
+    padding: 10px;
     margin-top: 20px;
-    text-align: center;
   }
 
   .mail {
     font-size: 1.5em;
   }
 }
-
-.media-item {
-  cursor: pointer;
-  position: relative;
-}
-
-.thumbnail {
-  transition: transform 0.3s ease;
-}
-
-.enlarged {
-  transform: scale(1.5);
-}
 #image-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  display: none; /* Asegúrate de que esté oculto por defecto */
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
+  z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
 
 #enlarged-image {
   max-width: 90%;
   max-height: 90%;
-  object-fit: contain; /* Mantiene las proporciones de la imagen */
+  object-fit: contain; /* Mantiene la proporción de la imagen */
 }

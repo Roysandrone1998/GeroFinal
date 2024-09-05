@@ -71,111 +71,71 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 32, nombre: "Foto 32", descripcion: "MINATO", url: "img/street/31.jpg" }
     ];
 
-    // VIDEOS
-    const videos = [
-        { id: 1, nombre: "Video 1", descripcion: "MINATO", url: "https://www.youtube.com/watch?v=NVZYmpVS8ds" },
-        { id: 2, nombre: "Video 2", descripcion: "MINATO", url: "https://www.youtube.com/watch?v=5IdjGx9RMNk" },
-        // ... más videos
-    ];
-    const mediaGridPhotos = document.querySelector('#photos-section .media-grid');
-    const mediaGridStreet = document.querySelector('#street-section .media-grid');
-    const mediaGridVideos = document.querySelector('#videos-section .media-gridv');
-    const imageOverlay = document.getElementById('image-overlay');
-    const enlargedImage = document.getElementById('enlarged-image');
+   // VIDEOS convertidos a imágenes con enlaces de YouTube
+   const videos = [
+    { id: 1, nombre: "Video 1", descripcion: "MINATO", url: "img/videos/1.png", youtubeUrl: "https://www.youtube.com/watch?v=NVZYmpVS8ds" },
+    { id: 2, nombre: "Video 2", descripcion: "MINATO", url: "img/videos/2.png", youtubeUrl: "https://www.youtube.com/watch?v=5IdjGx9RMNk" },
+    { id: 3, nombre: "Video 1", descripcion: "MINATO", url: "img/videos/3.png", youtubeUrl: "https://www.youtube.com/watch?v=NVZYmpVS8ds" },
+    { id: 4, nombre: "Video 2", descripcion: "MINATO", url: "img/videos/4.png", youtubeUrl: "https://www.youtube.com/watch?v=5IdjGx9RMNk" },
 
-    function displayPhotos(photos, container) {
-        console.log('Contenedor para fotos:', container); // Verifica el contenedor
-        if (!container) {
-            console.error('Container for photos is null');
-            return;
+    // ... más videos
+];
+const mediaGridPhotos = document.querySelector('#photos-section .media-grid');
+const mediaGridStreet = document.querySelector('#street-section .media-grid');
+const mediaGridVideos = document.querySelector('#videos-section .media-grid');
+
+// Función para renderizar medios
+function renderMedia(mediaArray, container) {
+    container.innerHTML = '';
+    mediaArray.forEach(media => {
+        const listItem = document.createElement('li');
+        const img = document.createElement('img');
+        img.src = media.url;
+        img.alt = media.descripcion;
+        listItem.appendChild(img);
+
+        if (media.youtubeUrl) {
+            listItem.addEventListener('click', () => {
+                window.open(media.youtubeUrl, '_blank');
+            });
+        } else {
+            listItem.addEventListener('click', () => {
+                enlargeImage(media.url);
+            });
         }
-        container.innerHTML = '';
-        photos.forEach(photo => {
-            const mediaItem = document.createElement('li');
-            mediaItem.classList.add('media-item');
 
-            const img = document.createElement('img');
-            img.src = photo.url;
-            img.alt = photo.nombre;
-            img.classList.add('thumbnail');
+        container.appendChild(listItem);
+    });
+}
 
-            const title = document.createElement('h3');
-            title.textContent = photo.nombre;
+// Renderizar cada sección
+renderMedia(photos, mediaGridPhotos);
+renderMedia(photosStreet, mediaGridStreet);
+renderMedia(videos, mediaGridVideos);
+   // Función para ampliar imágenes
+const overlay = document.getElementById('image-overlay');
+const enlargedImage = document.getElementById('enlarged-image');
 
-            mediaItem.appendChild(img);
-            mediaItem.appendChild(title);
-            container.appendChild(mediaItem);
+function enlargeImage(url) {
+    enlargedImage.src = url;
+    overlay.style.display = 'flex'; // Cambia a 'flex' para centrar la imagen
+}
 
-            img.addEventListener('click', function() {
-                console.log("Imagen clickeada en sección:", container); // Verifica si el evento se dispara
-                enlargedImage.src = photo.url;
-                imageOverlay.style.display = 'flex';
-            });
-        });
-    }
+overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
 
-    function displayVideos(videos, container) {
-        console.log('Contenedor para videos:', container); // Verifica el contenedor
-        container.innerHTML = '';
-        videos.forEach(video => {
-            const mediaItem = document.createElement('li');
-            mediaItem.classList.add('media-item');
+// Manejo de la navegación entre secciones
+const navLinks = document.querySelectorAll(".header-nav a");
+const sections = document.querySelectorAll("main > section");
 
-            const img = document.createElement('img');
-            const videoId = video.url.split('v=')[1];
-            img.src = `https://img.youtube.com/vi/${videoId}/0.jpg`; // Thumbnail del video
-            img.alt = video.nombre;
-            img.classList.add('thumbnail');
-
-            const title = document.createElement('h3');
-            title.textContent = video.nombre;
-
-            mediaItem.appendChild(img);
-            mediaItem.appendChild(title);
-            container.appendChild(mediaItem);
-
-            img.addEventListener('click', function() {
-                window.open(video.url, '_blank');
-            });
-        });
-    }
-
-    function showSection(sectionId) {
-        const sections = document.querySelectorAll('main section');
+navLinks.forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const targetId = this.id.replace("-link", "-section");
         sections.forEach(section => {
-            if (section.id === sectionId) {
-                section.style.display = 'block';
-            } else {
-                section.style.display = 'none';
-            }
+            section.style.display = section.id === targetId ? "block" : "none";
         });
-    }
-
-    document.getElementById('photos-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        showSection('photos-section');
     });
-
-    document.getElementById('street-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        showSection('street-section');
-    });
-
-    document.getElementById('videos-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        showSection('videos-section');
-    });
-
-    document.getElementById('contact-link').addEventListener('click', function(e) {
-        e.preventDefault();
-        showSection('contact-section');
-    });
-
-    displayPhotos(photos, mediaGridPhotos);
-    displayPhotos(photosStreet, mediaGridStreet);
-    displayVideos(videos, mediaGridVideos);
-
-    imageOverlay.addEventListener('click', function() {
-        imageOverlay.style.display = 'none';
-    });
+});
 });
