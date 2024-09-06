@@ -72,14 +72,15 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
    // VIDEOS convertidos a imágenes con enlaces de YouTube
-   const videos = [
-    { id: 1, nombre: "Video 1", descripcion: "MINATO", url: "img/videos/1.png", youtubeUrl: "https://www.youtube.com/watch?v=NVZYmpVS8ds" },
-    { id: 2, nombre: "Video 2", descripcion: "MINATO", url: "img/videos/2.png", youtubeUrl: "https://www.youtube.com/watch?v=5IdjGx9RMNk" },
-    { id: 3, nombre: "Video 1", descripcion: "MINATO", url: "img/videos/3.png", youtubeUrl: "https://www.youtube.com/watch?v=NVZYmpVS8ds" },
-    { id: 4, nombre: "Video 2", descripcion: "MINATO", url: "img/videos/4.png", youtubeUrl: "https://www.youtube.com/watch?v=5IdjGx9RMNk" },
+    const videos = [
+    { id: 1, nombre: "Video 2", descripcion: "MINATO", url: "img/videos/2.png", youtubeUrl: "https://youtu.be/NVZYmpVS8ds?si=zBPEOdRYqjOcRogq" },
+    { id: 2, nombre: "Video 1", descripcion: "MINATO", url: "img/videos/1.png", youtubeUrl: "https://youtu.be/gOunvJhnC2Q?si=gre5AIyBF_gt-1NG" },
+    { id: 3, nombre: "Video 1", descripcion: "MINATO", url: "img/videos/3.png", youtubeUrl: "https://youtu.be/4h-l3d0Dpo4?si=r9BIY80CsWvV9ycI" },
+    { id: 4, nombre: "Video 2", descripcion: "MINATO", url: "img/videos/4.png", youtubeUrl: "https://www.instagram.com/reel/Cy4FrMKOPi7/?igsh=YWprM3VrY2JybnI3" },
 
     // ... más videos
 ];
+
 const mediaGridPhotos = document.querySelector('#photos-section .media-grid');
 const mediaGridStreet = document.querySelector('#street-section .media-grid');
 const mediaGridVideos = document.querySelector('#videos-section .media-grid');
@@ -92,6 +93,10 @@ function renderMedia(mediaArray, container) {
         const img = document.createElement('img');
         img.src = media.url;
         img.alt = media.descripcion;
+
+        // Añadir clases para hacer las imágenes responsivas
+        img.classList.add('responsive-image');
+        
         listItem.appendChild(img);
 
         if (media.youtubeUrl) {
@@ -112,13 +117,16 @@ function renderMedia(mediaArray, container) {
 renderMedia(photos, mediaGridPhotos);
 renderMedia(photosStreet, mediaGridStreet);
 renderMedia(videos, mediaGridVideos);
-   // Función para ampliar imágenes
+
+// Función para ampliar imágenes
 const overlay = document.getElementById('image-overlay');
 const enlargedImage = document.getElementById('enlarged-image');
 
 function enlargeImage(url) {
     enlargedImage.src = url;
     overlay.style.display = 'flex'; // Cambia a 'flex' para centrar la imagen
+    enlargedImage.style.maxWidth = '90%'; // Ajusta el tamaño en función de la pantalla
+    enlargedImage.style.maxHeight = '90%'; // Asegúrate de que no exceda la pantalla
 }
 
 overlay.addEventListener('click', () => {

@@ -124,6 +124,7 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 10px;
   list-style: none;
+  
 }
 
 .media-itemv {
@@ -176,6 +177,32 @@
 
   .mail {
     font-size: 1.5em;
+  }
+  .media-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas móviles */
+    gap: 10px;
+  }
+
+  .header-nav ul {
+    flex-direction: row; /* Cambia el menú a una columna en pantallas móviles */
+    gap: 10px;
+  }
+
+  .header-title {
+    font-size: 2em;
+    text-align: center; /* Centra el título en pantallas móviles */
+  }
+
+  .works {
+    padding: 20px; /* Reduce el padding en la vista móvil */
+  }
+
+  .contacto {
+    padding: 20px; /* Asegura espacio adecuado */
+  }
+
+  .media-item img {
+    object-fit: cover; /* Evita distorsiones en la vista móvil */
   }
 }
 #image-overlay {
