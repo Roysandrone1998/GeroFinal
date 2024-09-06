@@ -162,7 +162,7 @@
   }
 
   .header-title {
-    font-size: 3em;
+    font-size: 2.5em;
     text-align: start;
   }
 
@@ -203,6 +203,11 @@
   #enlarged-image {
     max-width: 80%; /* Reduce el tamaño máximo para pantallas pequeñas */
     max-height: 80%;
+}
+.sello img {
+  max-width: 80%; /* Ajusta la imagen al ancho del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
 }
 body {
   overflow-x: hidden; /* Evita el desbordamiento horizontal en móviles */
