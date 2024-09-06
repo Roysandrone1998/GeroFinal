@@ -153,6 +153,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+  .header-nav {
+    padding: 50px 20px; /* Cambia el padding lateral a algo más pequeño */
+}
   .header-nav ul {
     flex-direction: column;
     gap: 10px;
@@ -168,9 +171,9 @@
   }
 
   .media-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
+    grid-template-columns: repeat(2, 1fr); /* Cambia a 2 columnas en pantallas pequeñas */
+    gap: 10px; /* Reduce el espacio entre imágenes */
+}
 
   .contacto, .mail {
     padding: 10px;
@@ -197,6 +200,13 @@
   .media-item img {
     object-fit: cover; /* Evita distorsiones en la vista móvil */
   }
+  #enlarged-image {
+    max-width: 80%; /* Reduce el tamaño máximo para pantallas pequeñas */
+    max-height: 80%;
+}
+body {
+  overflow-x: hidden; /* Evita el desbordamiento horizontal en móviles */
+}
 }
 #image-overlay {
   position: fixed;
