@@ -8,8 +8,7 @@
   display: flex;
   flex-direction: column; /* Coloca los elementos en columna */
   align-items: flex-start; /* Alinea los elementos al inicio del contenedor */
-  padding: 20px;
-
+  padding-top: 0;
 }
 
 .header-top {
@@ -22,6 +21,7 @@
   font-size: 3em; /* Ajusta el tamaño de la fuente si es necesario */
   text-align: left;
   margin: 50;
+  margin-top: 0;
   line-height: 0.9; /* Ajusta el espacio entre las líneas si es necesario */
 }
 .sello {
@@ -33,7 +33,7 @@
 }
 
 .sello img {
-  max-width: 100%; /* Ajusta la imagen al ancho del contenedor */
+  max-width: 80%; /* Ajusta la imagen al ancho del contenedor */
   height: auto; /* Mantiene las proporciones de la imagen */
   object-fit: contain; /* Asegura que la imagen se ajuste al contenedor sin distorsionarse */
 }
@@ -158,7 +158,8 @@
   }
 
   .header-title {
-    font-size: 2em;
+    font-size: 3em;
+    text-align: start;
   }
 
   .sello {
@@ -186,15 +187,6 @@
   .header-nav ul {
     flex-direction: row; /* Cambia el menú a una columna en pantallas móviles */
     gap: 10px;
-  }
-
-  .header-title {
-    font-size: 2em;
-    text-align: center; /* Centra el título en pantallas móviles */
-  }
-
-  .works {
-    padding: 20px; /* Reduce el padding en la vista móvil */
   }
 
   .contacto {
