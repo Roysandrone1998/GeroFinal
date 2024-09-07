@@ -83,6 +83,8 @@ const mediaGridPhotos = document.querySelector('#photos-section .media-grid');
 const mediaGridStreet = document.querySelector('#street-section .media-grid');
 const mediaGridVideos = document.querySelector('#videos-section .media-grid');
 
+
+
 // Función para renderizar medios
 function renderMedia(mediaArray, container) {
     container.innerHTML = '';
