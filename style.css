@@ -27,8 +27,8 @@ body {
 
 .header-title {
   font-size: 3.3em;
-  text-align: left;
-  margin: 50px 0 0 50px;
+  justify-content: left ;
+  margin-left: 10px;
   line-height: 0.9;
 }
 
@@ -58,7 +58,7 @@ body {
   padding: 0;
   margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: left ;
   gap: 20px;
 }
 
@@ -85,10 +85,10 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* Ajuste de columnas */
   gap: 10px;
-  margin: 0;
+  margin: 0 auto; /* Centra el contenido horizontalmente */
   padding: 0;
-  max-width: 1000px; /* Ajuste para evitar imágenes gigantes */
-  width: 100%;
+  width: 100%; /* Elimina el límite de ancho */
+  max-width: 100%; /* Asegura que ocupe el ancho completo del contenedor */
   list-style: none;
   border: none; /* Elimina cualquier borde aplicado */
 }
