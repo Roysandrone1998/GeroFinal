@@ -23,6 +23,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 10px;
 }
 
 .header-title {
@@ -47,7 +48,8 @@ body {
 }
 
 .header-nav {
-  margin-top: 60px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   padding: 0 20px;
   width: 100%;
   text-align: center;
@@ -76,7 +78,7 @@ body {
 }
 
 .works, .videos {
-  padding: 40px 20px;
+  padding: 0px 20px;
   display: flex;
   justify-content: center;
 }
@@ -116,7 +118,9 @@ body {
   padding: 20px;
   text-align: center;
 }
-
+.contacto p {
+  margin-bottom: 15px;
+}
 .mail {
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
   font-weight: 700;

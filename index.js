@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
     { id: 2, nombre: "Video 1", descripcion: "WORK/ JAGUAR - Cielo Azul / LIVE SESSION / Produced by Gixa Estudio", url: "img/videos/1.png", youtubeUrl: "https://youtu.be/gOunvJhnC2Q?si=gre5AIyBF_gt-1NG" },
     { id: 3, nombre: "Video 1", descripcion: "WORK/ CLOSER TO HEAVEN - Top White / FASHION FILM / Produced by Gixa Estudio", url: "img/videos/3.png", youtubeUrl: "https://youtu.be/4h-l3d0Dpo4?si=r9BIY80CsWvV9ycI" },
     { id: 4, nombre: "Video 2", descripcion: "WORK/ PROCASTINATION / Midway / Produced by Gixa Estudio", url: "img/videos/4.png", youtubeUrl: "https://www.instagram.com/reel/Cy4FrMKOPi7/?igsh=YWprM3VrY2JybnI3" },
-
+    { id: 4, nombre: "Video 2", descripcion: "WORK/ Visceral - Fashion Film", url: "img/videos/5.jpg", youtubeUrl: "https://www.youtube.com/watch?v=_nYDGoismLo" }
     // ... más videos
 ];
 
