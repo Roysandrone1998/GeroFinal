@@ -134,6 +134,12 @@ body {
   width: 100%; /* Elimina el límite de ancho */
   max-width: 80%; 
 }
+.media-title {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 5px;
+
+}
 
 .media-itemv iframe {
   width: 100%;
@@ -189,6 +195,12 @@ text-align: left;
 
   .sello img {
     max-width: 80%;
+  }
+  .media-title {
+    text-align: center;
+    font-size: 10px;
+    margin-top: 5px;
+  
   }
 }
 
