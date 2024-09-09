@@ -35,9 +35,9 @@ body {
 .sello {
   font-size: 1.4em;
   text-align: right;
-  margin-right: 50px;
-  line-height: 0.9;
-  font-weight: 100;
+  justify-content: right ;
+  margin-right: 10px;
+
 }
 
 .sello img {
@@ -131,6 +131,8 @@ body {
   text-align: center;
   list-style: none;
   border: none; /* Elimina cualquier borde aplicado */
+  width: 100%; /* Elimina el límite de ancho */
+  max-width: 80%; 
 }
 
 .media-itemv iframe {
