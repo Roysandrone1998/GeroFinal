@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 1, nombre: "Foto 1",url: "img/Work/0.jpg" },
         { id: 2, nombre: "Foto 2",url: "img/Work/1.jpg" },
         { id: 3, nombre: "Foto 2",url: "img/Work/2.jpg" },
-        { id: 4, nombre: "Foto 3", url: "img/Work/3.jpg" },
+        { id: 4, nombre: "Foto 3", url: "img/Work/3.jpeg" },
         { id: 5, nombre: "Foto 3",  url: "img/Work/4.jpg" },
         { id: 6, nombre: "Foto 4", url: "img/Work/5.jpg" },
         { id: 7, nombre: "Foto 5", url: "img/Work/6.jpg" },
@@ -31,14 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 16, nombre: "Foto 13", url: "img/Work/15.jpg" },
         { id: 17, nombre: "Foto 14",url: "img/Work/16.jpg" },
         { id: 18, nombre: "Foto 15", url: "img/Work/17.jpg" },
-        { id: 19, nombre: "Foto 16", url: "img/Work/18.jpeg" },
+        { id: 19, nombre: "Foto 16", url: "img/Work/18.jpg" },
         { id: 20, nombre: "Foto 17",url: "img/Work/19.jpg" },
         { id: 21, nombre: "Foto 18", url: "img/Work/20.jpg" },
         { id: 22, nombre: "Foto 19", url: "img/Work/21.jpg" },
         { id: 23, nombre: "Foto 20", url: "img/Work/22.jpg" },
         { id: 24, nombre: "Foto 21",url: "img/Work/23.jpg" },
-        { id: 25, nombre: "Foto 22",url: "img/Work/24.jpg" }
-
+        { id: 25, nombre: "Foto 22",url: "img/Work/24.jpg" },
+{ id: 26, nombre: "Foto 26",url: "img/Work/25.jpg" },
+{ id: 27, nombre: "Foto 22",url: "img/Work/26.jpg" },
+{ id: 28, nombre: "Foto 22",url: "img/Work/27.jpg" },
+{ id: 29, nombre: "Foto 22",url: "img/Work/28.jpg" },
+{ id: 30, nombre: "Foto 22",url: "img/Work/29.jpg" },
     ];
     // FOTOS STREET
     const photosStreet = [
@@ -66,16 +70,21 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 22, nombre: "Foto 22",url: "img/street/21.jpg" },
         { id: 23, nombre: "Foto 23",url: "img/street/22.jpg" },
         { id: 24, nombre: "Foto 24",url: "img/street/23.jpg" },
-        { id: 25, nombre: "Foto 24",url: "img/street/24.jpg" }
+        { id: 25, nombre: "Foto 24",url: "img/street/24.jpg" },
+{ id: 26, nombre: "Foto 24",url: "img/street/25.jpg" },
+{ id: 27, nombre: "Foto 24",url: "img/street/26.jpg" },
+{ id: 28, nombre: "Foto 24",url: "img/street/27.jpg" },
+{ id: 29, nombre: "Foto 24",url: "img/street/28.jpg" },
+{ id: 30, nombre: "Foto 24",url: "img/street/29.jpg" },
     ];
 
    // VIDEOS convertidos a imágenes con enlaces de YouTube
     const videos = [
-    { id: 1, nombre: "Video 2", descripcion: "WORK/ FIN DE FIESTA - VERSA SUAVE / LIVE SESSION ", url: "img/videos/2.png", youtubeUrl: "https://youtu.be/NVZYmpVS8ds?si=zBPEOdRYqjOcRogq" },
-    { id: 2, nombre: "Video 1", descripcion: "WORK/ JAGUAR - Cielo Azul / LIVE SESSION / Produced by Gixa Estudio", url: "img/videos/1.png", youtubeUrl: "https://youtu.be/gOunvJhnC2Q?si=gre5AIyBF_gt-1NG" },
-    { id: 3, nombre: "Video 1", descripcion: "WORK/ CLOSER TO HEAVEN - Top White / FASHION FILM / Produced by Gixa Estudio", url: "img/videos/3.png", youtubeUrl: "https://youtu.be/4h-l3d0Dpo4?si=r9BIY80CsWvV9ycI" },
-    { id: 4, nombre: "Video 2", descripcion: "WORK/ PROCASTINATION / Midway / Produced by Gixa Estudio", url: "img/videos/4.png", youtubeUrl: "https://www.instagram.com/reel/Cy4FrMKOPi7/?igsh=YWprM3VrY2JybnI3" },
-    { id: 4, nombre: "Video 2", descripcion: "WORK/ Visceral - Fashion Film", url: "img/videos/5.jpg", youtubeUrl: "https://www.youtube.com/watch?v=_nYDGoismLo" }
+    { id: 1, nombre: "Video 1", descripcion: "WORK/ FIN DE FIESTA - VERSA SUAVE / LIVE SESSION ", url: "img/videos/2.png", youtubeUrl: "https://youtu.be/NVZYmpVS8ds?si=zBPEOdRYqjOcRogq" },
+    { id: 2, nombre: "Video 2", descripcion: "WORK/ JAGUAR - Cielo Azul / LIVE SESSION / Produced by Gixa Estudio", url: "img/videos/1.png", youtubeUrl: "https://youtu.be/gOunvJhnC2Q?si=gre5AIyBF_gt-1NG" },
+    { id: 3, nombre: "Video 3", descripcion: "WORK/ CLOSER TO HEAVEN - Top White / FASHION FILM / Produced by Gixa Estudio", url: "img/videos/3.png", youtubeUrl: "https://youtu.be/4h-l3d0Dpo4?si=r9BIY80CsWvV9ycI" },
+    { id: 4, nombre: "Video 4", descripcion: "WORK/ PROCASTINATION / Midway / Produced by Gixa Estudio", url: "img/videos/4.png", youtubeUrl: "https://www.instagram.com/reel/Cy4FrMKOPi7/?igsh=YWprM3VrY2JybnI3" },
+    { id: 5, nombre: "Video 5", descripcion: "WORK/ Visceral - Fashion Film", url: "img/videos/5.jpg", youtubeUrl: "https://www.youtube.com/watch?v=_nYDGoismLo" }
     // ... más videos
 ];
 
